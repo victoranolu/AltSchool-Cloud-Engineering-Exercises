@@ -3,7 +3,11 @@
 In this exercise, I was instructed to find other Linux commands and how they are used or more sepcifically how it functions in the Linux environment. Here are a few of such commands ranging from user management to network management and some process management commands;
 
 # Ps
+<<<<<<< HEAD
 `Ps` can take a look at processes a current shell session is running. It prints useful information about the programs you're running. Processes like PID, time, command name etc. 
+=======
+`Ps` can take a look at processes a current shell session is running. It prints useful information about the programs you're running. Processes like PID, time, command name etc.
+>>>>>>> 7493f4b8da03555443ea82b52b63f7447450669e
 
 ![Ps screenshoot on Linux Ubuntu terminal](/AltSchool-Cloud-Engineering-Exercises/Exercise02/Screenshot%20(15).png "screenshot of ps code showing the PID, Time, CMD")
 
