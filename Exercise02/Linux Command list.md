@@ -3,8 +3,8 @@
 In this exercise, I was instructed to find other Linux commands and how they are used or more sepcifically how it functions in the Linux environment. Here are a few of such commands ranging from user management to network management and some process management commands;
 
 # Ps
-Ps can take a look at processes a current shell session is running. It prints useful information about the programs you're running. Processes like PID, time, command name etc. <br>
-<code>Ps</code><br>
+`Ps` can take a look at processes a current shell session is running. It prints useful information about the programs you're running. Processes like PID, time, command name etc. 
+
 ![Ps screenshoot on Linux Ubuntu terminal](/AltSchool-Cloud-Engineering-Exercises/Exercise02/Screenshot%20(15).png "screenshot of ps code showing the PID, Time, CMD")
 
 # Ping
@@ -48,6 +48,7 @@ Ps can take a look at processes a current shell session is running. It prints us
 `du` command shows disk space usage on the system.
 
 ![du screenshot on Linux Ubuntu Terminal](/AltSchool-Cloud-Engineering-Exercises/Exercise02/Screenshot%20(31).png "screenshot of du command")
+
 
 # curl
 
