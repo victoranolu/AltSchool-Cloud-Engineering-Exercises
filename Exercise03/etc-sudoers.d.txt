@@ -1,0 +1,8 @@
+drwxr-x---  2 root root 4096 Aug 27 22:01 .
+drwxr-xr-x 96 root root 4096 Aug 27 22:07 ..
+-r--r-----  1 root root  139 Aug 16 13:44 90-cloud-init-users
+-r--r-----  1 root root   25 Aug 27 22:01 Admin
+-r--r-----  1 root root   31 Aug 27 22:00 Engineering
+-r--r-----  1 root root  958 Feb  3  2020 README
+-r--r-----  1 root root   27 Aug 27 21:58 Support
+-r--r-----  1 root root   31 Aug 10 09:24 vagrant
