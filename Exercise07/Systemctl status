@@ -1,0 +1,15 @@
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; e>     Active: active (running) since Tue 2022-09-06 14:12:38>       Docs: https://httpd.apache.org/docs/2.4/
+    Process: 143601 ExecReload=/usr/sbin/apachectl graceful>   Main PID: 27256 (apache2)
+      Tasks: 6 (limit: 1131)
+     Memory: 13.2M
+     CGroup: /system.slice/apache2.service
+             ├─ 27256 /usr/sbin/apache2 -k start
+             ├─143633 /usr/sbin/apache2 -k start
+             ├─143634 /usr/sbin/apache2 -k start
+             ├─143636 /usr/sbin/apache2 -k start
+             ├─143637 /usr/sbin/apache2 -k start
+             └─143638 /usr/sbin/apache2 -k start
+
+Sep 27 14:30:37 ubuntu-focal systemd[1]: Reloaded The Apach>Sep 28 12:53:48 ubuntu-focal systemd[1]: Reloading The Apac>Sep 28 12:53:55 ubuntu-focal apachectl[136065]: AH00558: ap>Sep 28 12:53:55 ubuntu-focal systemd[1]: Reloaded The Apach>Oct 03 00:41:38 ubuntu-focal systemd[1]: Reloading The Apac>Oct 03 00:41:39 ubuntu-focal apachectl[140770]: AH00558: ap>Oct 03 00:41:39 ubuntu-focal systemd[1]: Reloaded The Apach>Oct 05 12:57:36 ubuntu-focal systemd[1]: Reloading The Apac>Oct 05 12:57:37 ubuntu-focal apachectl[143613]: AH00558: ap>Oct 05 12:57:38 ubuntu-focal systemd[1]: Reloaded The Apach>
+lines 7-26/26 (END)
