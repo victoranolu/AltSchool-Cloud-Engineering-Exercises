@@ -2,7 +2,7 @@
 
 On the exercise given about subnetting an IP address. The IP address is 193.16.20.35/29 and was asked to know what the Network IP, Broadcast IP, number of hosts, range of IP addresses.
 <pre><code> IP Address: 193.16.20.35/29
- Network IP: 193.16.20.32
+ Network IP: 193.16.20.0
  Broadcast IP: 193.16.20.39
  Number of Hosts: 8
  Number of Usable Hosts: 6
