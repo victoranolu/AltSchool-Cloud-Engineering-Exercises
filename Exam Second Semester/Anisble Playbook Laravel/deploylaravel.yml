@@ -1,0 +1,22 @@
+---
+- name: Deploy Laravel Playbook
+  hosts: all
+  remote_user: root
+
+# Installing Apache
+  roles:
+  - apache
+  #Setting ufw rules
+  - ufw
+  # Installing Composer
+  - composer
+  # Installing Git
+  - git
+  # Installing MySQL
+  - mysql
+   # Install and Setup PostgreSQL
+  - postgresql
+  # Going live to Laravel
+  - laravel-live
+  # Set SSL Certificate
+  - ssl-ca

@@ -1,0 +1,5 @@
+# This was not easy. 
+
+I like this exam and the mini project that was given. It made me understand the kind of roles a cloud engineer or a DevOps engineer can do. Using ansible to push to two different servers of Laravel application was fun, tough and interesting. The second part of the exam, that is writing a bash script to install and setup PostgreSQL wasn't my best effort but i shall use the break given by the school to try to skill up and become better and efficient about the task and everything around it. Few months ago I would dream of doing stuff like this but having no idea how to go about it but here i am doing stuff. It might be juvenile but i feel very very very accomplished by the result i got so far. 
+
+Thanks to my tutors, Mr Abuango, Mr Chibuike, Mr Madu and all my fellow students who are taking this course with me. Your patience to teach has been admirable and lets continue it into the next semester. Thanks

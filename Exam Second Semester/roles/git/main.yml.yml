@@ -1,0 +1,51 @@
+---
+   - name: Install Git, Zip,Curl
+     apt:
+      name:
+         - git
+         - unzip
+         - curl
+
+   - name: clone repo from github
+     git: >
+       repo=https://github.com/f1amy/laravel-realworld-example-app.git
+       dest=/var/www/poormanalfred/
+       force=yes
+       accept_hostkey=yes
+
+
+   - name: take ownership of /var/www/poormanalfred folder
+     file:
+        path: /var/www/poormanalfred/
+        state: directory
+        owner: www-data
+        group: www-data
+        mode: '0775'
+        recurse: yes
+
+   - name: set permissions for Laravel storage folder
+     file:
+        path: /var/www/poormanalfred/storage
+        state: directory
+        recurse: yes
+        mode: '0755'
+
+
+   - name: Copy .env.example file to .env
+     copy:
+       content: /var/www/poormanalfred/.env.example
+       dest: /var/www/poormanalfred/.env
+
+
+   - name: Copy .env.example file to .env
+     copy:
+      src: /home/vagrant/ansible/.env.example
+      dest: /var/www/poormanalfred/.env
+
+   - name: [Insert Name]
+     blockinfile:
+        path: /var/www/poormanalfred/routes/web.php
+        block: |
+          Route::get('/', function () {
+            return view('welcome');
+          });

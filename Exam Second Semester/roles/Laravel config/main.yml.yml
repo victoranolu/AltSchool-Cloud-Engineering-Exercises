@@ -1,0 +1,33 @@
+---
+  # Set server name
+   - name: set server name
+     copy:
+      src: /etc/apache2/sites-available/poormanalfred.conf
+      dest: /etc/apache2/sites-available/poormanalfred.conf
+
+
+  # Copy .htaccess
+   - name: set .htaccess
+     copy:
+      src: /home/vagrant/ansible/.htaccess
+      dest: /var/www/poormanalfred/.htaccess
+
+
+  # Going Live NOW!!!
+   - name: setup laravel
+     shell: |
+        export COMPOSER_ALLOW_SUPERUSER=1; composer show;
+        composer create-project
+        php artisan key:generate
+        php artisan migrate --seed
+     args:
+      chdir: /var/www/poormanalfred/
+     become: yes
+
+   - name: enable the new config
+     shell: |
+        a2dissite 000-default.conf
+        a2ensite poormanalfred.conf
+        systemctl reload apache2
+     args:
+      chdir: /var/www/poormanalfred/

@@ -1,0 +1,8 @@
+---  
+     - name: Transfer and execute the script
+       copy: 
+         src: /home/vagrant/ansible/postgreSQL.sh 
+         dest: /var/www/poormanalfred 
+         mode: 0777
+
+     

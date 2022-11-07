@@ -1,0 +1,84 @@
+---
+ #Install MySQL server
+   - name: Installing Mysql  and dependencies
+     package:
+       name:
+         - mysql-server
+         - mysql-client
+         - python3-mysqldb
+         - libmysqlclient-dev
+         - makepasswd
+         - python3-pip
+         - python3-mysql.connector
+       state: present
+       update_cache: yes
+
+   - name: start and enable mysql service
+     service:
+       name: mysql
+       state: started
+       enabled: yes
+
+    # Creating a Database
+   - name: Flush Privileges
+     shell: mysql -u root -e 'FLUSH PRIVILEGES'
+
+   - name: Set MySQL root password
+     mysql_user:
+      login_host: localhost
+      login_user: root
+      login_password: ''
+      name: root
+      password: mansodangerous05
+      state: present
+
+   - name: Create MySQL DB
+     mysql_db:
+       login_host: localhost
+       login_user: root
+       login_password: mansodangerous05
+       name: poormanalfred
+       state: present
+
+   - name: Generate DB password
+     mysql_db:
+       login_host: localhost
+       login_user: root
+       login_password: mansodangerous05
+       password: poormanalfred
+       state: present
+      
+   - name: creating mysql user
+     mysql_user:
+       login_host: localhost
+       login_user: root
+       login_password: mansodangerous05
+       name: poormanalfred
+       password: mansodangerous05
+       priv: '*.*:ALL'
+       host: '%'
+       state: present
+
+  # Setting Database Credentials in .env file
+   - name: set APP_URL
+     lineinfile: dest=/var/www/poormanalfred/.env regexp='^APP_URL=' line=APP_URL=http://poormanalfred.me
+
+   - name: set DB_CONNECTION
+     lineinfile: dest=/var/www/poormanalfred/.env regexp='^DB_CONNECTION=' line=DB_CONNECTION=mysql
+
+   - name: set DB_HOST
+     lineinfile: dest=/var/www/poormanalfred/.env regexp='^DB_HOST=' line=DB_HOST=localhost
+
+   - name: set DB_PORT
+     lineinfile: dest=/var/www/poormanalfred/.env regexp='^DB_PORT=' line=DB_PORT=3306
+
+   - name: set DB_DATABASE
+     lineinfile: dest=/var/www/poormanalfred/.env regexp='^DB_DATABASE=' line=DB_DATABASE=poormanalfred
+
+   - name: set DB_USERNAME
+     lineinfile: dest=/var/www/poormanalfred/.env regexp='^DB_USERNAME=' line=DB_USERNAME=poormanalfred
+
+   - name: set DB_PASSWORD
+     lineinfile: dest=/var/www/poormanalfred/.env regexp='^DB_PASSWORD=' line=DB_PASSWORD=mansodangerous05
+     when: dbpwd.changed
+   

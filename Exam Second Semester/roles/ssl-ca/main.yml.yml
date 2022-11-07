@@ -1,0 +1,17 @@
+---
+
+- name: Install software-properties-common
+  apt:
+    name: software-properties-common
+    state: present
+
+
+- name: Setting domain name secured
+  shell: |
+      apt install python3 python3-venv libaugeas0 -y
+      sudo  python3 -m venv /opt/certbot/
+      sudo /opt/certbot/bin/pip install --upgrade pip
+      sudo /opt/certbot/bin/pip install certbot certbot-apache
+      sudo ln -s /opt/certbot/bin/certbot /usr/bin/certbot
+      sudo certbot --apache osehodionanolu@gmail.com -d poormanalfred.me -d www.poormanalfred.me
+      sudo certbot certonly --apache
