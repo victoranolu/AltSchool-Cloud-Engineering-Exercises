@@ -3,7 +3,7 @@
    hosts: all
    remote_user: root
 
-   task:
+   tasks:
     - name: Install Apache and Php Service
       apt:
        name: 
