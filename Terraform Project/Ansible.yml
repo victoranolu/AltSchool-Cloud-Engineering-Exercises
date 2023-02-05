@@ -1,0 +1,30 @@
+---
+ - name: Ansible Playbook to Install Apache, Php and set Timezone
+   hosts: all
+   remote_user: root
+
+   tasks:
+    - name: Install Apache and Php Service
+      apt:
+       name: 
+        - apache2
+       update_cache: yes
+       state: latest 
+    - name: Start Apache Server
+      service: 
+       name: apache2
+       state: started
+
+    - name: Host page identifcation as main content
+      copy:
+       src: /home/vagrant/ansible/phpfiles/index.html
+       dest: /var/www/html/index.html
+
+    - name: Set Timezone to Africa/Lagos
+      timezone:
+        name: Africa/Lagos
+
+    - name: Restart apache2 service
+      service:
+        name: apache2
+        state: restarted         
