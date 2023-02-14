@@ -48,10 +48,10 @@ services:
     ports:
       - 3306:3306
     environment:
-      MYSQL_DATABASE: laral
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_PASSWORD: victor123
-      MYSQL_USERNAME: victor
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USERNAME: ${DB_USERNAME}
     volumes:
       - dbdata:/var/lib/mysql/
       - ./mysql/my.cnf:/etc/mysql/my.cnf
